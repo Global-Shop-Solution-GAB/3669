@@ -1,0 +1,460 @@
+Program.Sub.ScreenSU.Start
+gui.workrange..create
+gui.workrange..caption("Work Order Range")
+gui.workrange..size(3150,3360)
+gui.workrange..position(0,0)
+gui.workrange..event(unload,workrange_unload)
+gui.workrange..alwaysontop(False)
+gui.workrange..fontname("Arial")
+gui.workrange..fontsize(8)
+gui.workrange..forecolor(0)
+gui.workrange..fontstyle(,,,,)
+gui.workrange..BackColor(-2147483633)
+gui.workrange..controlbox(True)
+gui.workrange..maxbutton(False)
+gui.workrange..minbutton(True)
+gui.workrange..mousepointer(0)
+gui.workrange..moveable(True)
+gui.workrange..sizeable(False)
+gui.workrange..ShowInTaskBar(True)
+gui.workrange..titlebar(True)
+gui.workrange.frameDate.create(frame)
+gui.workrange.frameDate.caption("Date Range")
+gui.workrange.frameDate.size(2670,1455)
+gui.workrange.frameDate.position(100,900)
+gui.workrange.frameDate.visible(True)
+gui.workrange.frameDate.fontname("Arial")
+gui.workrange.frameDate.fontsize(8)
+gui.workrange.frameWC.create(frame)
+gui.workrange.frameWC.caption("WC")
+gui.workrange.frameWC.size(2685,900)
+gui.workrange.frameWC.position(100,0)
+gui.workrange.frameWC.visible(True)
+gui.workrange.frameWC.fontname("Arial")
+gui.workrange.frameWC.fontsize(8)
+gui.workrange.dpto.create(datepicker)
+gui.workrange.dpto.visible(True)
+gui.workrange.dpto.size(1935,285)
+gui.workrange.dpto.zorder(0)
+gui.workrange.dpto.position(600,900)
+gui.workrange.dpto.enabled(True)
+gui.workrange.dpto.parent("framedate")
+gui.workrange.dpfrom.create(datepicker)
+gui.workrange.dpfrom.visible(True)
+gui.workrange.dpfrom.size(1935,285)
+gui.workrange.dpfrom.zorder(0)
+gui.workrange.dpfrom.position(605,365)
+gui.workrange.dpfrom.enabled(True)
+gui.workrange.dpfrom.parent("framedate")
+gui.workrange.lbl1.create(label)
+gui.workrange.lbl1.caption("From:")
+gui.workrange.lbl1.backstyle(0)
+gui.workrange.lbl1.visible(True)
+gui.workrange.lbl1.size(420,255)
+gui.workrange.lbl1.zorder(1)
+gui.workrange.lbl1.position(115,390)
+gui.workrange.lbl1.enabled(True)
+gui.workrange.lbl1.parent("framedate")
+gui.workrange.lbl1.fontname("Arial")
+gui.workrange.lbl1.fontsize(8)
+gui.workrange.lbl1.BackColor(-2147483633)
+gui.workrange.lbl2.create(label)
+gui.workrange.lbl2.caption("To:")
+gui.workrange.lbl2.backstyle(0)
+gui.workrange.lbl2.visible(True)
+gui.workrange.lbl2.size(315,255)
+gui.workrange.lbl2.zorder(1)
+gui.workrange.lbl2.position(320,890)
+gui.workrange.lbl2.enabled(True)
+gui.workrange.lbl2.parent("framedate")
+gui.workrange.lbl2.fontname("Arial")
+gui.workrange.lbl2.fontsize(8)
+gui.workrange.lbl2.BackColor(-2147483633)
+gui.workrange.cmdlookup.create(button)
+gui.workrange.cmdlookup.caption("Query")
+gui.workrange.cmdlookup.visible(True)
+gui.workrange.cmdlookup.size(855,375)
+gui.workrange.cmdlookup.zorder(0)
+gui.workrange.cmdlookup.position(960,2400)
+gui.workrange.cmdlookup.enabled(True)
+gui.workrange.cmdlookup.fontname("Arial")
+gui.workrange.cmdlookup.fontsize(8)
+gui.workrange.cmdlookup.event(click,cmdlookup_click)
+gui.workrange.txtwc.create(textbox)
+gui.workrange.txtwc.text("")
+gui.workrange.txtwc.visible(True)
+gui.workrange.txtwc.size(1455,315)
+gui.workrange.txtwc.zorder(0)
+gui.workrange.txtwc.position(100,300)
+gui.workrange.txtwc.enabled(True)
+gui.workrange.txtwc.parent("framewc")
+gui.workrange.txtwc.fontname("Arial")
+gui.workrange.txtwc.fontsize(8)
+gui.workrange.txtwc.BackColor(-2147483643)
+gui.workrange.cmdwc.create(button)
+gui.workrange.cmdwc.caption("v")
+gui.workrange.cmdwc.visible(True)
+gui.workrange.cmdwc.size(210,240)
+gui.workrange.cmdwc.zorder(0)
+gui.workrange.cmdwc.position(1600,315)
+gui.workrange.cmdwc.enabled(True)
+gui.workrange.cmdwc.parent("framewc")
+gui.workrange.cmdwc.fontname("Arial")
+gui.workrange.cmdwc.fontsize(8)
+gui.workrange.cmdwc.event(click,cmdwc_click)
+gui.workrange.chkALL.create(checkbox)
+gui.workrange.chkALL.caption("All")
+gui.workrange.chkALL.visible(True)
+gui.workrange.chkALL.size(525,300)
+gui.workrange.chkALL.zorder(0)
+gui.workrange.chkALL.position(2000,300)
+gui.workrange.chkALL.enabled(True)
+gui.workrange.chkALL.alignment(0)
+gui.workrange.chkALL.fontname("Arial")
+gui.workrange.chkALL.fontsize(8)
+
+
+gui.FormWO..create
+gui.FormWO..caption("Labor Sequences")
+gui.FormWO..size(8670,6345)
+gui.FormWO..position(0,0)
+gui.FormWO..event(unload,formwo_unload)
+gui.FormWO..alwaysontop(False)
+gui.FormWO..fontname("Arial")
+gui.FormWO..fontsize(8)
+gui.FormWO..forecolor(0)
+gui.FormWO..fontstyle(,,,,)
+gui.FormWO..BackColor(-2147483633)
+gui.FormWO..controlbox(True)
+gui.FormWO..maxbutton(False)
+gui.FormWO..minbutton(True)
+gui.FormWO..mousepointer(0)
+gui.FormWO..moveable(True)
+gui.FormWO..sizeable(False)
+gui.FormWO..ShowInTaskBar(True)
+gui.FormWO..titlebar(True)
+gui.FormWO.gsflexWO.create(gsflexgrid)
+gui.FormWO.gsflexWO.FixedRows(0)
+gui.FormWO.gsflexWO.FixedCols(0)
+gui.FormWO.gsflexWO.visible(True)
+gui.FormWO.gsflexWO.size(8265,5295)
+gui.FormWO.gsflexWO.zorder(0)
+gui.FormWO.gsflexWO.position(90,500)
+gui.FormWO.gsflexWO.enabled(True)
+gui.FormWO.cmdUpdate.create(button)
+gui.FormWO.cmdUpdate.caption("Update")
+gui.FormWO.cmdUpdate.visible(True)
+gui.FormWO.cmdUpdate.size(855,375)
+gui.FormWO.cmdUpdate.zorder(0)
+gui.FormWO.cmdUpdate.position(7490,60)
+gui.FormWO.cmdUpdate.enabled(True)
+gui.FormWO.cmdUpdate.fontname("Arial")
+gui.FormWO.cmdUpdate.fontsize(8)
+gui.FormWO.cmdUpdate.event(click,cmdupdate_click)
+gui.FormWO.lblUser.create(label)
+gui.FormWO.lblUser.caption("User:")
+gui.FormWO.lblUser.backstyle(0)
+gui.FormWO.lblUser.visible(True)
+gui.FormWO.lblUser.size(2340,255)
+gui.FormWO.lblUser.zorder(1)
+gui.FormWO.lblUser.position(100,100)
+gui.FormWO.lblUser.enabled(True)
+gui.FormWO.lblUser.fontname("Arial")
+gui.FormWO.lblUser.fontsize(10)
+gui.FormWO.lblUser.fontstyle(True,False,False,False)
+gui.FormWO.lblUser.BackColor(-2147483633)
+gui.FormWO.txtID.create(textbox)
+gui.FormWO.txtID.text("")
+gui.FormWO.txtID.visible(True)
+gui.FormWO.txtID.size(1455,315)
+gui.FormWO.txtID.zorder(0)
+gui.FormWO.txtID.position(2945,100)
+gui.FormWO.txtID.enabled(True)
+gui.FormWO.txtID.fontname("Arial")
+gui.FormWO.txtID.fontsize(8)
+gui.FormWO.txtID.BackColor(-2147483643)
+gui.FormWO.lblID.create(label)
+gui.FormWO.lblID.caption("ID:")
+gui.FormWO.lblID.backstyle(0)
+gui.FormWO.lblID.visible(True)
+gui.FormWO.lblID.size(330,255)
+gui.FormWO.lblID.zorder(1)
+gui.FormWO.lblID.position(2630,130)
+gui.FormWO.lblID.enabled(True)
+gui.FormWO.lblID.fontname("Arial")
+gui.FormWO.lblID.fontsize(10)
+gui.FormWO.lblID.fontstyle(True,False,False,False)
+gui.FormWO.lblID.BackColor(-2147483633)
+
+
+gui.Process..create
+gui.Process..caption("Processing")
+gui.Process..size(6165,2145)
+gui.Process..position(0,0)
+gui.Process..event(unload,formwo_unload)
+gui.Process..alwaysontop(False)
+gui.Process..fontname("Arial")
+gui.Process..fontsize(8)
+gui.Process..forecolor(0)
+gui.Process..fontstyle(,,,,)
+gui.Process..BackColor(-2147483633)
+gui.Process..controlbox(True)
+gui.Process..maxbutton(False)
+gui.Process..minbutton(False)
+gui.Process..mousepointer(0)
+gui.Process..moveable(True)
+gui.Process..sizeable(False)
+gui.Process..ShowInTaskBar(True)
+gui.Process..titlebar(True)
+gui.Process.lbl1.create(label)
+gui.Process.lbl1.caption("Processing...")
+gui.Process.lbl1.backstyle(0)
+gui.Process.lbl1.visible(True)
+gui.Process.lbl1.size(8205,1875)
+gui.Process.lbl1.zorder(1)
+gui.Process.lbl1.position(200,200)
+gui.Process.lbl1.enabled(True)
+gui.Process.lbl1.fontname("Arial")
+gui.Process.lbl1.fontsize(48)
+gui.Process.lbl1.BackColor(-2147483633)
+gui.Process.lblstatus.create(label)
+gui.Process.lblstatus.caption("")
+gui.Process.lblstatus.backstyle(0)
+gui.Process.lblstatus.visible(True)
+gui.Process.lblstatus.size(1935,255)
+gui.Process.lblstatus.zorder(1)
+gui.Process.lblstatus.position(300,1300)
+gui.Process.lblstatus.enabled(True)
+gui.Process.lblstatus.fontname("Arial")
+gui.Process.lblstatus.fontsize(8)
+gui.Process.lblstatus.BackColor(-2147483633)
+
+
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'This is a Work order update for sequences with no labor for Millcut
+'Program will run off any custom hook.
+V.Local.sQuery.Declare(String)
+V.Local.sHold.Declare(String)
+V.Global.count.Declare(Long)
+
+F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+
+Gui.workrange..Show
+
+
+
+
+
+Program.Sub.Main.End
+
+program.sub.cmdlookup_click.start
+V.Local.sSQL.Declare(String)
+V.Local.todate.Declare(String)
+V.Local.fromdate.Declare(String)
+V.Local.wc.Declare(String)
+
+Gui.FormWO.cmdUpdate.Enabled(False)
+F.Intrinsic.String.Concat("SELECT EMPLOYEE FROM EMPLOYEE_MSTR WHERE PR_USER_ID = '",V.Caller.User,"'",V.Local.sSQL)
+F.Odbc.Connection!conx.Openrecordsetro("rstX",V.Local.sSQL)
+
+F.Intrinsic.Control.If(V.Odbc.conx!rstX.EOf,=,False)
+	Gui.FormWO.txtID.Text(V.Odbc.conx!rstX.FieldValRTrim!EMPLOYEE)
+F.Intrinsic.Control.ElseIf(V.Odbc.conx!rstX.eof,=,True)
+	Gui.FormWO.txtID.Text("NO ASSOCIATION")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.String.concat("USER: ",V.Caller.User,V.Local.sSQL)
+Gui.FormWO.lblUser.Caption(V.Local.sSQL)
+F.ODBC.conx!rstX.Close
+
+
+
+
+F.Intrinsic.Control.If(V.Screen.workrange!chkALL.Value,=,1)
+	V.Local.WC.Set("")
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Concat(" AND PART='",V.Screen.workrange!txtwc.Text,"' ",V.Local.WC)
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.String.Format(V.Screen.workrange!dpto.Value,"mmddyy",V.Local.todate)
+F.Intrinsic.String.Format(V.Screen.workrange!dpfrom.Value,"mmddyy",V.Local.fromdate)
+
+F.Intrinsic.String.Concat("select * from JOB_OPERATIONS where flag_closed<>'Y' and hours_actual=0 and LMO='L' and seq<>'996000' and (DATE_START BETWEEN '",V.Local.fromdate,"' and '",V.local.todate,"')",V.Local.wc," ORDER BY JOB,SUFFIX,SEQ",V.Local.sSQL)
+F.ODBC.Connection!conx.OpenRecordsetRO("rstJob",V.Local.sSQL)
+
+F.Intrinsic.Control.If(V.ODBC.conx!rstJob.EOF,=,True)
+	F.Intrinsic.UI.Msgbox("No jobs found within range!","Error")
+	F.ODBC.conx!rstJob.Close
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.Endif
+
+V.Local.r.Declare(String)
+V.Local.count.Declare(String)
+
+Gui.FormWO..Show
+'Set Subclass to true before using Flexgrid.   *Must set to false before program exit.
+Gui.FormWO.gsflexWO.subclass(true)
+
+
+	Gui.FormWO.gsflexWO.Cols(8)
+	'Set number of rows in flex grid
+V.Local.count.Set(1)
+F.Intrinsic.Control.DoUntil(V.ODBC.conx!rstJob.EOF,=,True)
+	F.Intrinsic.Math.Add(V.Local.count,1,V.Local.count)
+	F.ODBC.conx!rstJob.MoveNext
+F.Intrinsic.Control.Loop
+F.ODBC.conx!rstJob.MoveFirst
+
+	Gui.FormWO.gsflexWO.Rows(V.Local.count)
+	F.Intrinsic.Math.Sub(V.Local.count,1,V.Local.count)
+	'Fix Flex Grid Header
+	Gui.FormWO.gsflexWO.FixedRows(1)
+	'Build Styles for columns
+	Gui.FormWO.gsflexWO.buildstyle(1,0,"fontstyle","bold",True)
+	Gui.FormWO.gsflexWO.buildstyle(1,1,"fontstyle","bold",True)
+	Gui.FormWO.gsflexWO.buildstyle(1,2,"fontstyle","bold",True)
+	Gui.FormWO.gsflexWO.buildstyle(1,3,"fontstyle","bold",True)
+	Gui.FormWO.gsflexWO.buildstyle(1,4,"fontstyle","bold",True)
+	Gui.FormWO.gsflexWO.buildstyle(1,5,"fontstyle","bold",True)
+	Gui.FormWO.gsflexWO.buildstyle(1,6,"fontstyle","bold",True)
+	Gui.FormWO.gsflexWO.buildstyle(1,7,"fontstyle","bold",True)
+
+	Gui.FormWO.gsflexWO.buildstyle(2,0,"type","locked","True")
+	Gui.FormWO.gsflexWO.buildstyle(2,1,"type","locked","True")
+	Gui.FormWO.gsflexWO.buildstyle(2,2,"type","locked","True")
+	Gui.FormWO.gsflexWO.buildstyle(2,3,"type","locked","True")
+	Gui.FormWO.gsflexWO.buildstyle(2,4,"type","locked","True")
+	Gui.FormWO.gsflexWO.buildstyle(2,5,"type","locked","True")
+	Gui.FormWO.gsflexWO.buildstyle(2,6,"type","locked","True")
+	Gui.FormWO.gsflexWO.buildstyle(2,7,"type","checkbox","Yes/No")
+	Gui.FormWO.gsflexWO.ColWidth(4,2400)
+	Gui.FormWO.gsflexWO.ColWidth(0,700)
+	Gui.FormWO.gsflexWO.ColWidth(1,600)
+	Gui.FormWO.gsflexWO.ColWidth(2,700)
+	Gui.FormWO.gsflexWO.ColWidth(3,600)
+	Gui.FormWO.gsflexWO.ColWidth(6,600)
+	'Apply style 1 for Row 0
+	Gui.FormWO.gsflexWO.applystyle(0,1)
+
+	'Setup Flex Grid Header Row
+Gui.FormWO.gsflexWO.TextMatrix(0,0,"WO")
+Gui.FormWO.gsflexWO.TextMatrix(1,0,"Suffix")
+Gui.FormWO.gsflexWO.TextMatrix(2,0,"Seq")
+Gui.FormWO.gsflexWO.TextMatrix(3,0,"WC")
+Gui.FormWO.gsflexWO.TextMatrix(4,0,"Description")
+Gui.FormWO.gsflexWO.TextMatrix(5,0,"Order Date")
+Gui.FormWO.gsflexWO.TextMatrix(6,0,"Units")
+Gui.FormWO.gsflexWO.TextMatrix(7,0,"Select")
+V.Global.count.Set(V.Local.count)
+	'Create Flex grid Rows
+	F.Intrinsic.Control.For(V.Local.r,1,V.Local.count,1)
+		'Apply Style 2 to show checkbox
+		Gui.FormWO.gsflexWO.applystyle(V.Local.r,2)
+		'Set recordset data to cells
+
+		Gui.FormWO.gsflexWO.TextMatrix(0,V.Local.r,V.ODBC.conx!rstJob.FieldValTrim!JOB)
+		Gui.FormWO.gsflexWO.TextMatrix(1,V.Local.r,V.ODBC.conx!rstJob.FieldValTrim!SUFFIX)
+		Gui.FormWO.gsflexWO.TextMatrix(2,V.Local.r,V.ODBC.conx!rstJob.FieldValTrim!SEQ)
+		Gui.FormWO.gsflexWO.TextMatrix(3,V.Local.r,V.ODBC.conx!rstJob.FieldValTrim!PART)
+		Gui.FormWO.gsflexWO.TextMatrix(4,V.Local.r,V.ODBC.conx!rstJob.FieldValTrim!DESCRIPTION)
+		Gui.FormWO.gsflexWO.TextMatrix(5,V.Local.r,V.ODBC.conx!rstJob.FieldValTrim!DATE_START)
+		Gui.FormWO.gsflexWO.TextMatrix(6,V.Local.r,V.ODBC.conx!rstJob.FieldValTrim!UNITS_OPEN)
+		Gui.FormWO.gsflexWO.TextMatrix(7,V.Local.r,"1")
+		F.ODBC.conx!rstJob.MoveNext
+	F.Intrinsic.Control.Next(V.Local.r)
+
+F.ODBC.conx!rstJob.Close
+Gui.FormWO.cmdUpdate.Enabled(True)
+
+program.sub.cmdlookup_click.end
+
+program.sub.workrange_unload.start
+F.Intrinsic.Control.End
+
+program.sub.workrange_unload.end
+
+program.sub.formwo_unload.start
+Gui.FormWO.gsflexWO.subclass(false)
+F.Intrinsic.Control.End
+
+program.sub.formwo_unload.end
+
+program.sub.cmdupdate_click.start
+V.Local.sSQL.Declare(String)
+V.Local.sDate.Declare(String)
+V.Local.r.Declare(Long)
+V.Local.sHold.Declare(String)
+V.Local.sHold.Redim(0,5)
+
+
+F.Intrinsic.String.Concat("SELECT EMPLOYEE FROM EMPLOYEE_MSTR WHERE EMPLOYEE = '",V.Screen.FormWO!txtID.Text,"'",V.Local.sSQL)
+F.Odbc.Connection!conx.Openrecordsetro("rstX",V.Local.sSQL)
+
+F.Intrinsic.Control.If(V.Odbc.conx!rstX.EOf,=,True)
+	F.Intrinsic.UI.Msgbox("ID not valid.  Please enter valid ID for update!","ID not valid.")
+	F.Intrinsic.Control.ExitSub
+	F.ODBC.conx!rstX.Close
+F.Intrinsic.Control.EndIf
+F.ODBC.conx!rstX.Close
+Gui.Process..Show
+
+V.Local.sLine.Declare(String)
+V.Local.fHours.Declare(Float)
+
+F.Intrinsic.Control.For(V.Local.r,1,V.global.count,1)
+	Gui.FormWO.gsflexWO.GetTextMatrix(7,V.Local.r,V.Local.sHold(0))
+	F.Intrinsic.Control.If(V.Local.sHold(0),=,1)
+		'Date
+		F.Intrinsic.String.Format(V.Ambient.Now,"MMDDYY",V.Local.sDate)
+		'WO
+		Gui.FormWO.gsflexWO.GetTextMatrix(0,V.Local.r,V.Local.sHold(0))
+		Gui.Process.lblstatus.Caption(V.Local.sHold(0))
+		'Suffix
+		Gui.FormWO.gsflexWO.GetTextMatrix(1,V.Local.r,V.Local.sHold(1))
+		'Sequence
+		Gui.FormWO.gsflexWO.GetTextMatrix(2,V.Local.r,V.Local.sHold(2))
+		'Units
+		Gui.FormWO.gsflexWO.GetTextMatrix(6,V.Local.r,V.Local.sHold(3))
+		F.Intrinsic.Math.Mult(V.Local.sHold(3),10000,V.Local.sHold(3))
+
+		F.Intrinsic.string.Concat(V.local.sline,V.Local.sDate,V.Ambient.Tab,V.Screen.FormWO!txtID.Text,V.Ambient.Tab,V.Local.sHold(0),V.Ambient.Tab,V.Local.sHold(1),V.Ambient.Tab,V.Local.sHold(2),V.Ambient.tab,"",V.Ambient.tab,V.Local.sLine)
+		F.Intrinsic.String.Concat(V.Local.sLine,"0",V.Ambient.Tab,"Y",V.Ambient.tab,"D",V.Ambient.tab,"1200",V.Ambient.Tab,"1200",V.Ambient.tab,"L",V.Ambient.Tab,V.Local.sHold(3),V.Ambient.Tab,"0",V.Ambient.Tab,"0",V.Ambient.tab,V.Ambient.NewLine,V.Local.sLine)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.r)
+
+F.Intrinsic.String.Concat(V.Caller.FilesDir,"\",V.Caller.CompanyCode,V.Caller.Terminal,"MOPEN.txt",V.Local.sHold(0))
+F.Intrinsic.File.String2File(V.Local.sHold(0),V.Local.sLine)
+
+F.Intrinsic.String.Concat(V.Ambient.DblQuote,V.Caller.CompanyCode,V.Caller.Terminal,"MOPEN.txt",V.Ambient.DblQuote,V.Local.sHold(0))
+F.Intrinsic.Task.LaunchGSSSync("JB0455","-C",V.Local.sHold(0))
+
+F.Intrinsic.Control.CallSub(Formwo_unload)
+
+program.sub.cmdupdate_click.end
+
+program.sub.cmdwc_click.start
+V.Local.sCol.Declare(String)
+V.Local.sWidth.Declare(String)
+V.Local.part.Declare(String)
+V.Local.sret.Declare(String)
+V.Local.squery.Declare(String)
+V.Local.temp.Declare(String)
+
+F.Intrinsic.String.Split("WC*!*NAME","*!*",V.Local.sCol)
+F.Intrinsic.String.Split("1000*!*4000","*!*",V.Local.swidth)
+F.Intrinsic.String.Concat("SELECT DISTINCT PART, DESCRIPTION FROM V_JOB_OPERATIONS WHERE LMO='L' AND PART<>'' ORDER BY PART","",V.Local.squery)
+F.intrinsic.UI.Browser("SELECT WC","conx",V.Local.squery,V.Local.sCol,V.Local.sWidth,V.Local.sret)
+F.Intrinsic.Control.If(V.Local.sret,<>,"***CANCEL***")
+	F.Intrinsic.string.Split(V.Local.sret,"*!*",V.Local.sret)
+	Gui.workrange.txtwc.Text(V.Local.sret(0))
+F.Intrinsic.Control.EndIf
+
+program.sub.cmdwc_click.end
+
+
